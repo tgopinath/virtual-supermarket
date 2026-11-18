@@ -167,7 +167,7 @@ function ARControls({ ar, onExit, xr }: { ar: AR; onExit: () => void; xr?: boole
     money: `Make ₹${ar.target}: choose a coin or note, then tap the surface to put it down. Tap money to pick it up.`,
   }[ar.tool]
   return (
-    <div ref={ref} className="pointer-events-none fixed inset-0 flex flex-col justify-between p-3 font-sans">
+    <div ref={ref} className="vs-hud pointer-events-none fixed inset-0 flex flex-col justify-between p-3 font-sans">
       <div className="pointer-events-auto flex flex-wrap gap-2">
         <button className="btn-ghost py-2" onClick={onExit}>✕ Exit AR</button>
         {tools.map(([t, label]) => <button key={t} className={`btn py-2 text-base ${ar.tool === t ? 'bg-brand text-white' : 'bg-white/90'}`} onClick={() => ar.setTool(t)}>{label}</button>)}

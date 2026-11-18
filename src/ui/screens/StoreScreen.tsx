@@ -310,7 +310,7 @@ export function StoreScreen() {
         </div>
       )}
       {playing && (
-        <div className="pointer-events-none absolute inset-0 flex flex-col">
+        <div className="vs-hud pointer-events-none absolute inset-0 flex flex-col">
           <TopBar support={support} />
           <div className="flex flex-1 items-start justify-between gap-3 overflow-hidden px-3">
             <div className="flex flex-col gap-3">{phase !== 'checkout' && <ShoppingList />}</div>
