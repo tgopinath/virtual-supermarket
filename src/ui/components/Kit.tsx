@@ -26,7 +26,7 @@ export function ScreenShell({ title, back, children, wide }: { title: string; ba
   const profile = useProgress((s) => s.profile)
   return (
     <div className="min-h-full bg-[radial-gradient(circle_at_20%_0%,#ffe0cc,transparent_40%),radial-gradient(circle_at_90%_10%,#d9f2ff,transparent_35%)] pb-10">
-      <header className="sticky top-0 z-20 flex items-center gap-3 bg-cream/80 px-4 py-3 backdrop-blur">
+      <header className="vs-shell-header sticky top-0 z-20 flex items-center gap-3 bg-cream/80 px-4 py-3 backdrop-blur">
         {back && <button className="btn-ghost px-3 py-2" onClick={back} aria-label="Back">←</button>}
         <h1 className="flex-1 truncate text-2xl font-extrabold text-ink">{title}</h1>
         <CoinBadge />

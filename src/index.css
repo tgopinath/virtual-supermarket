@@ -45,3 +45,23 @@ button:disabled { cursor: not-allowed; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- Phone apps (src/native.ts) ----------
+   html.k-android = Android app (Material 3 bars, Kolam M3 kit); html.k-ios = iPhone app (HIG bars, Kolam iOS kit).
+   Hub and menu screens use the native bars instead of the screen header; the 3D store, quizzes, results and the
+   welcome screen stay full-screen. Nothing changes in a browser. */
+html:is(.k-android, .k-ios):is(.vs-tab, .vs-sub) .vs-shell-header { display: none !important; }
+html:is(.k-android, .k-ios) :is(body, #root) { height: auto; min-height: 100%; }
+html.k-android.vs-sub .md-navigation-bar,
+html.k-ios.vs-sub .ios-tabbar,
+html.k-android.vs-immersive :is(.md-top-app-bar, .md-navigation-bar),
+html.k-ios.vs-immersive :is(.ios-navbar, .ios-largetitle, .ios-tabbar) { display: none !important; }
+html.k-android.vs-immersive body, html.k-ios.vs-immersive body { padding: 0 !important; }
+html.k-android.vs-immersive :is(body, #root), html.k-ios.vs-immersive :is(body, #root) { height: 100%; }
+html.k-android.vs-sub body { padding-bottom: var(--md-inset-bottom, 0px) !important; }
+html.k-ios.vs-sub body { padding-bottom: env(safe-area-inset-bottom) !important; }
+html.k-android body { background: #fff7ed; }
+html.k-ios body { background: var(--ios-grouped, #f2f2f7); }
+html.k-android :is(.btn, .btn-primary, .btn-green, .btn-blue, .btn-ghost) { border-radius: 999px; box-shadow: none; }
+html.k-ios :is(.btn, .btn-primary, .btn-green, .btn-blue, .btn-ghost) { border-radius: 999px; box-shadow: none; }
+html.k-ios .panel { border-radius: 22px; box-shadow: none; }
